@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
+import { GestorDeDatosService } from './gestor-de-datos.service';
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +13,7 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule ,
     FormsModule
   ],
-  providers: [],
+  providers: [GestorDeDatosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,5 @@
 <div class="fondo">
 
-
   <table class="table table-striped " *ngIf="hayRegistros(); else sinarticulos">
     <thead>
       <tr>
@@ -19,8 +18,7 @@
         <td>{{art.precio}}</td>
         <td><button class="btn btn-danger" (click)="borrar(art.codigo)">Borrar?</button></td>
         <td><button class="btn btn-secondary" (click)="seleccionar(art)">Seleccionar</button></td>
-        <td><button class="btn btn-warning" onclick="colorear(this)" (click)="corroborarSeleccion(i)">Cambiar de
-            posición</button></td>
+        <td><button class="btn btn-warning" onclick="colorear(this)" (click)="corroborarSeleccion(i)">Cambiar de posición</button></td>
       </tr>
     </tbody>
   </table>
