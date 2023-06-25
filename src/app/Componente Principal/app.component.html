@@ -1,0 +1,52 @@
+<div class="fondo">
+
+  <table class="table table-striped " *ngIf="hayRegistros(); else sinarticulos">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Borrar</th>
+        <th scope="col">Seleccionar</th>
+        <th scope="col">Cambiar Lugar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let art of articulos; , let i = index;" [ngClass]="{ 'fila-coloreada': art.colorearFila == true }">
+        <th scope="row">{{art.codigo}}</th>
+        <td>{{art.descripcion}}</td>
+        <td>{{art.precio}}</td>
+        <td><button class="btn btn-danger" (click)="borrar(art.codigo)">Borrar?</button></td>
+        <td><button class="btn btn-secondary" (click)="seleccionar(art)">Seleccionar</button></td>
+        <td><button class="btn btn-warning" onclick="colorear(this)" (click)="corroborarSeleccion(i)">Cambiar de posición</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #sinarticulos>
+    <p>No hay articulos.</p>
+  </ng-template>
+
+
+  <div >
+    <div class="centrado">
+      <div class="etiquetas">
+        <p>   Codigo:        </p>
+        <input type="number"  class="mb-3" [(ngModel)]="art.codigo" />
+        <p>  descripcion:  </p>
+        <input type="text" class="mb-3" [(ngModel)]="art.descripcion" />
+        <p>   precio:      </p>
+        <input type="number" class="mb-3"  [(ngModel)]="art.precio" />
+      </div>
+    
+
+      <div class="centrarbotones">
+        <p><button class="btn btn-success" (click)="agregar()">Agregar</button>
+          <button class="btn btn-success" (click)="modificar()">Modificar</button>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>

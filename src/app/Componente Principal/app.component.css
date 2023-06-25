@@ -1,0 +1,37 @@
+
+.table.table-dark.table-striped tbody tr.fila-coloreada{
+background-color: red !important ;
+}
+
+
+
+.fila-coloreada{
+  background-color: red !important ;
+  }
+.centrarbotones{
+
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.centrado{
+
+  margin: auto;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: rgb(255, 140, 0);
+
+  width: 30%;
+  opacity: 75% ;
+
+}
+
+.etiquetas{
+
+  display: flex;
+  flex-direction: column;
+}
+
