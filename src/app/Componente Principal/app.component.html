@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let art of articulos; , let i = index;" [ngClass]="{ 'fila-coloreada': art.colorearFila == true }">
+      <tr *ngFor="let art of articulos; , let i = index;" [ngClass]="{ 'fila-coloreada': art.colorearfila == true }">
         <th scope="row">{{art.codigo}}</th>
         <td>{{art.descripcion}}</td>
         <td>{{art.precio}}</td>
@@ -38,8 +38,6 @@
         <p>   precio:      </p>
         <input type="number" class="mb-3"  [(ngModel)]="art.precio" />
       </div>
-    
-
       <div class="centrarbotones">
         <p><button class="btn btn-success" (click)="agregar()">Agregar</button>
           <button class="btn btn-success" (click)="modificar()">Modificar</button>

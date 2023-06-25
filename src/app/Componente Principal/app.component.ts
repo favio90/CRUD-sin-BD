@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Cons } from 'rxjs';
 import { GestorDeDatosService } from '../gestor-de-datos.service';
+import { Articulos } from '../Articulos';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,6 @@ export class AppComponent {
 
 
 
-
   hayRegistros() {
     return this.articulos.length > 0;
   }
@@ -46,7 +46,7 @@ export class AppComponent {
   
   
   
-  seleccionar(art: { codigo: number; descripcion: string; precio: number; }) {
+  seleccionar( art : Articulos) {
     this.art.codigo = art.codigo;
     this.art.descripcion = art.descripcion;
     this.art.precio = art.precio;
