@@ -4,9 +4,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './Componente Principal/app.component';
 import {FormsModule} from '@angular/forms';
 import { GestorDeDatosService } from './gestor-de-datos.service';
+import { CrudComponent } from './crud/crud.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
