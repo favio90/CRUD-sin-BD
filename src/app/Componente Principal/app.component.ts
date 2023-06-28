@@ -16,16 +16,8 @@ export class AppComponent {
   }
 
   public articulos: any[];
-
-
-
-  art = {
-    codigo: 0,
-    descripcion: "",
-    precio: 0,
-    colorearFila: false
-  }
-
+   art = new Articulos(0, "", 0);
+   articuloSeleccionado!: Articulos;
 
 
   hayRegistros() {
@@ -34,8 +26,8 @@ export class AppComponent {
 
 
 
-  borrar(codigo: number) {
-    this.miServicio.borrar(codigo);
+  borrar(indiceaborrar: number) {
+    this.miServicio.borrar(indiceaborrar);
   }
 
 
@@ -52,18 +44,11 @@ export class AppComponent {
     this.art.precio = art.precio;
   }
  
- 
- 
-  modificar() {
-    for (let x = 0; x < this.articulos.length; x++)
-      if (this.articulos[x].codigo == this.art.codigo) {
-        this.articulos[x].descripcion = this.art.descripcion;
-        this.articulos[x].precio = this.art.precio;
-        return;
-      }
-    alert('No existe el código de articulo ingresado');
-  }
 
+
+modificar() {
+this.miServicio.modificar(this.art)
+}
 
 
   corroborarSeleccion(i: number) {
@@ -72,13 +57,6 @@ export class AppComponent {
 
 
 
-  devuelveIndiceArray(codigo: number): number {
-    for (let x = 0; x < this.articulos.length; x++)
-      if (this.articulos[x].codigo == codigo) {
-        return x;
-      }
-    return -1;
-  }
 }
 
 

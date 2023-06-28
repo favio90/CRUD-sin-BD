@@ -12,13 +12,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let art of articulos; , let i = index;" [ngClass]="{ 'fila-coloreada': art.colorearfila == true }">
+      <tr *ngFor="let art of articulos;  let i = index;" [ngClass]="{ 'fila-coloreada': art.colorearfila == true }">
         <th scope="row">{{art.codigo}}</th>
         <td>{{art.descripcion}}</td>
         <td>{{art.precio}}</td>
-        <td><button class="btn btn-danger" (click)="borrar(art.codigo)">Borrar?</button></td>
+        <td><button class="btn btn-danger" (click)="borrar(i)">Borrar?</button></td>
         <td><button class="btn btn-secondary" (click)="seleccionar(art)">Seleccionar</button></td>
-        <td><button class="btn btn-warning" onclick="colorear(this)" (click)="corroborarSeleccion(i)">Cambiar de posición</button></td>
+        <td><button class="btn btn-warning" (click)="corroborarSeleccion(i)">Cambiar de posición</button></td>
       </tr>
     </tbody>
   </table>
@@ -44,7 +44,5 @@
         </p>
       </div>
     </div>
-
   </div>
-
 </div>
