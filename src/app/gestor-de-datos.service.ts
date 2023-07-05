@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Articulos
- } from './Articulos';
+import { Articulos } from './Articulos';
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +7,6 @@ export class GestorDeDatosService {
   static articulos: any[];
 
   constructor() { }
-
 
 
 articulos = [  new Articulos(1, 'Milanesa', 50),
@@ -23,13 +21,9 @@ new Articulos(5, 'Palmitos', 17),];
   codigoseleccionado: number = -1;
 
 
-
-
   hayRegistros(): boolean {
     return this.articulos.length > 0;
   }
-
-
 
 
   modificar(art : Articulos) {
@@ -45,21 +39,25 @@ new Articulos(5, 'Palmitos', 17),];
 
 
 
-  agregar(codigo: number, descripcion: string, precio: number) {
-    if (codigo == 0) {
+  agregar(articuloRecibido : Articulos) {
+    if (articuloRecibido.codigo == 0) {
       alert('Debe ingresar un código de articulo distinto a cero');
       return;
     }
-    for (let x = 0; x < this.articulos.length; x++)
-      if (this.articulos[x].codigo == codigo) {
+    for (let art of this.articulos) {
+      
+       if (art.codigo == articuloRecibido.codigo) {
         alert('ya existe un articulo con dicho codigo');
         return;
       }
-    this.articulos[this.indicecoloreado].colorearfila = false;
-    this.seleccionado = false;
-    const nuevoArticulo = new Articulos(codigo, descripcion, precio);
-     this.articulos.push(nuevoArticulo);
-  }
+    }
+    if(this.seleccionado){
+      this.articulos[this.indicecoloreado].colorearfila = false;
+      this.seleccionado = false
+    }    
+     let objetonuevo = new Articulos (articuloRecibido.codigo, articuloRecibido.descripcion, articuloRecibido.precio)
+     this.articulos.push(objetonuevo);
+    }
 
 
 
@@ -92,24 +90,7 @@ new Articulos(5, 'Palmitos', 17),];
     this.articulos.splice(indiceaborrar, 1);
   }
 
-
-
 }
-
-//   borrar(codigo: number) {
-//     this.seleccionado = false;
-//     this.articulos[this.devuelveIndiceArray(this.codigoseleccionado)].colorearfila = false;
-//     for (let x = 0; x < this.articulos.length; x++)
-//       if (this.articulos[x].codigo == codigo) {
-//         if (this.articulos[x].colorearfila == true) {
-
-//           this.seleccionado = false
-//         }
-//         this.articulos.splice(x, 1);
-//         return;
-//       }
-//   }
-
 
 
 

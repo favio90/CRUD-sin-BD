@@ -1,19 +1,17 @@
-<div class="fondo">
-
   <table class="table table-striped " *ngIf="hayRegistros(); else sinarticulos">
     <thead>
       <tr>
-        <th scope="col">Codigo</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Borrar</th>
-        <th scope="col">Seleccionar</th>
-        <th scope="col">Cambiar Lugar</th>
+        <th >Codigo</th>
+        <th>Descripcion</th>
+        <th >Precio</th>
+        <th >Borrar</th>
+        <th>Seleccionar</th>
+        <th >Cambiar Lugar</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let art of articulos;  let i = index;" [ngClass]="{ 'fila-coloreada': art.colorearfila == true }">
-        <th scope="row">{{art.codigo}}</th>
+        <th>{{art.codigo}}</th>
         <td>{{art.descripcion}}</td>
         <td>{{art.precio}}</td>
         <td><button class="btn btn-danger" (click)="borrar(i)">Borrar?</button></td>
@@ -27,22 +25,6 @@
     <p>No hay articulos.</p>
   </ng-template>
 
+  
+  <app-crud [articuloSeleccionado]="articuloSeleccionado"> </app-crud>
 
-  <div >
-    <div class="centrado">
-      <div class="etiquetas">
-        <p>   Codigo:        </p>
-        <input type="number"  class="mb-3" [(ngModel)]="art.codigo" />
-        <p>  descripcion:  </p>
-        <input type="text" class="mb-3" [(ngModel)]="art.descripcion" />
-        <p>   precio:      </p>
-        <input type="number" class="mb-3"  [(ngModel)]="art.precio" />
-      </div>
-      <div class="centrarbotones">
-        <p><button class="btn btn-success" (click)="agregar()">Agregar</button>
-          <button class="btn btn-success" (click)="modificar()">Modificar</button>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>

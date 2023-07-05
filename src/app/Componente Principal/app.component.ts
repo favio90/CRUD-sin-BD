@@ -16,8 +16,8 @@ export class AppComponent {
   }
 
   public articulos: any[];
-   art = new Articulos(0, "", 0);
-   articuloSeleccionado!: Articulos;
+
+   articuloSeleccionado = new Articulos(0, "", 0);
 
 
   hayRegistros() {
@@ -31,31 +31,21 @@ export class AppComponent {
   }
 
 
-
-  agregar() {
-    this.miServicio.agregar(this.art.codigo, this.art.descripcion, this.art.precio);
-  }
   
   
-  
-  seleccionar( art : Articulos) {
-    this.art.codigo = art.codigo;
-    this.art.descripcion = art.descripcion;
-    this.art.precio = art.precio;
+  seleccionar( articulo : Articulos) {
+    this.articuloSeleccionado.codigo = articulo.codigo;
+    this.articuloSeleccionado.descripcion = articulo.descripcion;
+    this.articuloSeleccionado.precio = articulo.precio;
   }
  
 
 
-modificar() {
-this.miServicio.modificar(this.art)
-}
 
 
   corroborarSeleccion(i: number) {
     this.miServicio.corroborarSeleccion(i);
   }
-
-
 
 }
 

@@ -1,0 +1,22 @@
+.centrado{
+    margin: auto;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: rgb(230, 22, 60);
+  
+    width: 30%;
+    opacity: 75% ;
+  }
+
+  .etiquetas{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .centrarbotones{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+  }
+  

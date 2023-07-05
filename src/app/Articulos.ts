@@ -6,19 +6,12 @@ export class Articulos {
     colorearfila : boolean;
 
 
-
+   
     constructor(codigo: number, descripcion : string,  precio: number) {
       this.codigo = codigo;
       this.precio = precio;
       this.descripcion = descripcion;
       this.colorearfila = false;
     }
-  
-  
-
-
-
-
-
   }
   

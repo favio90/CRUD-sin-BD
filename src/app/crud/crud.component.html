@@ -1,1 +1,18 @@
-<p>crud works!</p>
+
+<div >
+    <div class="centrado">
+      <div class="etiquetas">
+        <p>   Codigo:        </p>
+        <input type="number"  class="mb-3" [(ngModel)]="articuloSeleccionado.codigo" />
+        <p>  descripcion:  </p>
+        <input type="text" class="mb-3" [(ngModel)]="articuloSeleccionado.descripcion" />
+        <p>   precio:      </p>
+        <input type="number" class="mb-3"  [(ngModel)]="articuloSeleccionado.precio" />
+      </div>
+      <div class="centrarbotones">
+        <p><button class="btn btn-success" (click)="agregar()">Agregar</button>
+          <button class="btn btn-success" (click)="modificar()">Modificar</button>
+        </p>
+      </div>
+    </div>
+  </div>
